@@ -183,6 +183,7 @@ Answers.forEach(function(answer,index){
 });
 restartScoreBtn.addEventListener('click',function(){
   resetscore();
+  restartScoreBtn.classList.add('hide-element');
 });
 startButton.addEventListener('click',function(){
   startingMenu.classList.add('hide-element');
