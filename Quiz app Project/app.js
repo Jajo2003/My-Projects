@@ -139,12 +139,7 @@ const restartScoreBtn = document.querySelector('.resetScore');
 
 let highScore = localStorage.getItem('highScore') || 0;
 const showHighScore = document.getElementById('highScore');
-startButton.addEventListener('click',function(){
-  startingMenu.classList.add('hide-element');
-  GameContainer.classList.remove('hide-element');
-  showBtn(highScore);
-  fillQuestions();
-})
+
 index = 0;
 QuestionIndex =0;
 Score =0;
@@ -156,12 +151,7 @@ const ScoreBoard = document.querySelector('.ctr');
 const GameContainer = document.querySelector('.game-container');
 
 
-function fillQuestions(){
-Question.textContent = quizQuestions[QuestionIndex].question;
-for(let i =0;i<quizQuestions[QuestionIndex].options.length;i++){
-  Answers[i].textContent = quizQuestions[QuestionIndex].options[i];
-}
-}
+//event listeners
 Answers.forEach(function(answer,index){
   answer.addEventListener('click',function(){
     if(checkAnswer(index)){
@@ -179,11 +169,9 @@ Answers.forEach(function(answer,index){
     }
     if(QuestionIndex < quizQuestions.length){
       fillQuestions();
-      console.log(QuestionIndex);
     }
     else{
       ScoreBoard.textContent = `You have scored ${Score} points`;
-      console.log(QuestionIndex);
     }
    
   })
@@ -192,7 +180,17 @@ Answers.forEach(function(answer,index){
      return CurrentIndex === quizQuestions[QuestionIndex].correctAnswer; 
   }
   showBtn(highScore);
-})
+});
+restartScoreBtn.addEventListener('click',function(){
+  resetscore();
+});
+startButton.addEventListener('click',function(){
+  startingMenu.classList.add('hide-element');
+  GameContainer.classList.remove('hide-element');
+  showBtn(highScore);
+  fillQuestions();
+});
+//functions
 function StartOver(){
     index = 0;
         QuestionIndex =0;
@@ -216,6 +214,10 @@ function showBtn(par){
     restartScoreBtn.classList.remove('hide-element');
   }
 }
-restartScoreBtn.addEventListener('click',function(){
-  resetscore();
-})
+
+function fillQuestions(){
+  Question.textContent = quizQuestions[QuestionIndex].question;
+  for(let i =0;i<quizQuestions[QuestionIndex].options.length;i++){
+    Answers[i].textContent = quizQuestions[QuestionIndex].options[i];
+  }
+  }
