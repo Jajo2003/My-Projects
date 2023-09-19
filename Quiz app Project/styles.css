@@ -12,12 +12,16 @@ body{
   background-size: cover;
   backdrop-filter: blur(5px);
 }
-#highScore{
-  position: absolute;
-  top:20px;
-  right: 20px;
-  font-size: 1.5em;
+.top-place{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  flex-direction: column;
+  gap:30px;
+}
+#highScore{
+  font-size: 1.5em;
 }
 #main{
   position: relative;
@@ -90,14 +94,11 @@ body{
   font-size: 1.1em;
 }
 .answer:hover{
-  color:#000;
-  background: #fff;
+
   transform: scale(1.1);
 }
 .resetScore{
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
+  
   color:#fff;
   background: transparent;
   padding: 1rem 2rem;
@@ -115,8 +116,27 @@ body{
 .hide-element{
   display: none;
 }
+.correct-btn{
+  background-color: green;
+}
+.wrong-btn{
+  background-color: red;
+}
 
-
+@keyframes tingle{
+  0%{
+    transform: rotate(-10deg);
+  }
+  50%{
+    transform: rotate(10deg);
+  }
+  100%{
+    transform: rotate(0);
+  }
+}
+.tingle{
+  animation:tingle 0.5s;
+}
 @keyframes Bounce{
   0%{
     transform: scale(1);

@@ -139,15 +139,7 @@ const restartScoreBtn = document.querySelector('.resetScore');
 
 let highScore = localStorage.getItem('highScore') || 0;
 const showHighScore = document.getElementById('highScore');
-startButton.addEventListener('click',function(){
-  startingMenu.classList.add('hide-element');
-  GameContainer.classList.remove('hide-element');
-  showBtn(highScore);
-  fillQuestions();
-})
-index = 0;
-QuestionIndex =0;
-Score =0;
+
 //starting Game Phase Ends
 //Game proccess
 const Question = document.querySelector('.question');
@@ -155,19 +147,21 @@ const Answers = document.querySelectorAll('.answer');
 const ScoreBoard = document.querySelector('.ctr');
 const GameContainer = document.querySelector('.game-container');
 
-
-function fillQuestions(){
-Question.textContent = quizQuestions[QuestionIndex].question;
-for(let i =0;i<quizQuestions[QuestionIndex].options.length;i++){
-  Answers[i].textContent = quizQuestions[QuestionIndex].options[i];
-}
-}
+//event listeners
 Answers.forEach(function(answer,index){
-  answer.addEventListener('click',function(){
+  answer.addEventListener('click',function (){
     if(checkAnswer(index)){
       Score++;
       ScoreBoard.textContent = Score;
+      answer.classList.add('correct-btn','tingle');
     }
+    else{
+      answer.classList.add('wrong-btn','tingle');
+    }
+    Answers.forEach(function(answer){
+      answer.disabled = true;
+    })
+     answerClicked  = true;
      QuestionIndex++;
     if(QuestionIndex === quizQuestions.length){
       if(Score>highScore){
@@ -177,22 +171,50 @@ Answers.forEach(function(answer,index){
       }
       StartOver();
     }
+    
+    setTimeout(function(){
+      restartBtnColors(answer);
+      Answers.forEach(function(answer){
+        answer.disabled = false;
+      })
+      answer.classList.remove('tingle');
+    },500);
     if(QuestionIndex < quizQuestions.length){
-      fillQuestions();
-      console.log(QuestionIndex);
+      setTimeout(fillQuestions,500);
+    
     }
     else{
       ScoreBoard.textContent = `You have scored ${Score} points`;
-      console.log(QuestionIndex);
     }
    
   })
   
+  showBtn(highScore);
+});
+
+restartScoreBtn.addEventListener('click',function(){
+  resetscore();
+  restartScoreBtn.classList.add('hide-element');
+});
+startButton.addEventListener('click',function(){
+  startingMenu.classList.add('hide-element');
+  GameContainer.classList.remove('hide-element');
+  showBtn(highScore);
+  fillQuestions();
+});
+
+
+//functions
+function restartBtnColors(item){
+  item.classList.remove('correct-btn');
+  item.classList.remove('wrong-btn');
+  }
+
+ 
   function checkAnswer(CurrentIndex){
      return CurrentIndex === quizQuestions[QuestionIndex].correctAnswer; 
   }
-  showBtn(highScore);
-})
+
 function StartOver(){
     index = 0;
         QuestionIndex =0;
@@ -201,6 +223,8 @@ function StartOver(){
         startingMenu.classList.remove('hide-element');
         GameContainer.classList.add('hide-element');
 }
+
+
 highScore = localStorage.getItem('highScore') || 0;
 showHighScore.textContent = `Current High Score:${highScore}`;
 
@@ -211,11 +235,20 @@ function resetscore(){
   showHighScore.textContent = `Current High Score: ${highScore}`;
 }
 
+
 function showBtn(par){
   if(par!=0){
     restartScoreBtn.classList.remove('hide-element');
   }
 }
-restartScoreBtn.addEventListener('click',function(){
-  resetscore();
-})
+
+function fillQuestions(){
+  Question.textContent = quizQuestions[QuestionIndex].question;
+  for(let i =0;i<quizQuestions[QuestionIndex].options.length;i++){
+    Answers[i].textContent = quizQuestions[QuestionIndex].options[i];
+  }
+  }
+
+  
+  
+  
