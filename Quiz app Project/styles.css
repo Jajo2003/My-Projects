@@ -148,3 +148,17 @@ body{
     transform: scale(1);
   }
 }
+@media screen and (max-width: 600px) {
+  .starting-menu {
+    padding: 2rem;
+  }
+  .question {
+    padding: 1rem;
+  }
+  .answer {
+    padding: 1rem;
+  }
+  .game-container {
+    padding: 1rem;
+  }
+}
