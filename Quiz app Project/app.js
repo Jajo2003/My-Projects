@@ -1,129 +1,110 @@
 const quizQuestions = [
+ 
   {
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Berlin", "Madrid"],
+    question: "რას ნიშნავს ოპერატორი ===",
+    options: ["მინიჭებას", "ტიპისა და მნიშვნელობის ტოლობას", "ტოლობას", "უტოლობას"],
+    correctAnswer: 1
+  },
+  
+  {
+    question: "Javascript ენაზე დაწერილი კოდი მოთავსებულია ტეგებს შორის:",
+    options: ["<script> ... </script>","<source> ... <source>" , "<js> ... <js>", "<app> ... <app>"],
     correctAnswer: 0
   },
   {
-    question: "Which planet is known as the Red Planet?",
-    options: ["Venus", "Mars", "Jupiter", "Saturn"],
-    correctAnswer: 1
-  },
-  {
-    question: "What is the largest mammal?",
-    options: ["Elephant", "Giraffe", "Blue Whale", "Hippopotamus"],
+    question: "JavaScript-ში 'null' რას ნიშნავს??",
+    options: ["0", "ფუნქცია", "სიცარიელე", "შეცდომა"],
     correctAnswer: 2
   },
   {
-    question: "Which famous scientist developed the theory of general relativity?",
-    options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
+    question: "JavaScript-ში რას აკეთებს 'console.log()' მეთოდი?",
+    options: ["არაფერს არ ნიშნავს", "დაგვიბეჭდავს სასურველ ტექსტს კონსოლში", "იძახებს ლოგინის ფუნქციას", "გაგვიხსნის კონსოლს"],
     correctAnswer: 1
   },
   {
-    question: "Which element has the chemical symbol 'H'?",
-    options: ["Helium", "Hydrogen", "Hafnium", "Hassium"],
+    question: "რომელია სწორი ჩანაწერი უტოლობისთვის",
+    options: ["!=!", "!=", "<>", "!!"],
     correctAnswer: 1
   },
   {
-    question: "Which novel by George Orwell features the concept of 'Big Brother'?",
-    options: ["1984", "Brave New World", "Fahrenheit 451", "The Catcher in the Rye"],
+    question:"JavaScript-ში რას ნიშნავს '|| ოპერატორი'?",
+    options: ["ლოგიკურ ან-ს", "ლოგიკურ კი-ს", "ლოგიკურ და-ს", "ლოგიკურ არა-ს"],
     correctAnswer: 0
   },
   {
-    question: "What is the largest ocean on Earth?",
-    options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+    question: "JavaScript-ში რას ნიშნავს '&& ოპერატორი'?",
+    options: ["ლოგიკურ კი-ს", "ლოგიკურ და-ს", "ლოგიკურ არა-ს", "ლოგიკურ ან-ს"],
+    correctAnswer: 1
+  },
+  {
+    question: "რომელია სწორი ჩანაწერი იმისთვის რომ ავირჩიოთ HTML ელემენტი 'Class' საშუალებით?",
+    options: ["document.getElementByClassName", "document.getElementByWithName", "document.getElementAfterClassName", "document.getElementByClass"],
+    correctAnswer: 0
+  },
+
+  {
+    question: "JavaScript-ში რას ნიშნავს '!== ოპერატორი'?",
+    options: ["უტოლობას", "ტიპისა და მნიშვნელობის უტოლობას", "ტიპის უტოლობას", "ზუსტ ტოლობას"],
+    correctAnswer: 1
+  },
+  {
+    question: "JavaScript-ში 'NaN' მნიშვნელობა რას ნიშნავს?",
+    options: ["რიცხვი არ მოიძებნა", "მეტია ან ტოლი", "Null", "მსგავსი ჩანაწერი არ არსებობს"],
+    correctAnswer: 0
+  },
+  {
+    question: "რას ნიშნავს const ",
+    options: ["მუდმივს ცვლადს", "დროებით ცვლადს", "განუსაზღვრელ ცვლადს", "ბლოკურ ცვლადს"],
+    correctAnswer: 0
+  },
+  {
+    question: "JavaScript-ში რას ნიშნავს '++ ოპერატორი'?",
+    options: ["კვადრატში აყვანას", "მნიშვნელობის ზრდას 1-ით", "1-ზე გამრავლებას", "გაორმაგებას"],
+    correctAnswer: 1
+  },
+  {
+    question: "როგორ განვსაზღვროთ მასივის ზომა",
+    options: ["Array.size", "Array.allelements", "Array.length", "Array.sum"],
+    correctAnswer: 2
+  },
+  {
+    question: "JavaScript-ში რას ნიშნავს '-- ოპერატორი'?",
+    options: ["ანულირებას", "თავის თავზე გაყოფას", "მნიშვნელობის შემცირებას 1-ით", "სტრიქონის გაყოფას დეფისით"],
+    correctAnswer: 2
+  },
+  {
+    question: "რომელია სწორი ჩანაწერი იმისთვის რომ ავირჩიოთ HTML ელემენტი 'id' საშუალებით?",
+    options: ["document.getElementById", "document.getElementWithId", "document.getElementAfterId", "document.getElementByTagName"],
+    correctAnswer: 0
+  },
+
+  {
+    question: "var a = '5',b = 5  a===b რა იქნება პასუხი ამ გამოსახულებაზე?",
+    options: ["True", "Nan", "Undefined", "false"],
     correctAnswer: 3
   },
   {
-    question: "What is the chemical symbol for gold?",
-    options: ["Ag", "Au", "Fe", "Hg"],
-    correctAnswer: 1
-  },
-  {
-    question: "Who painted the Mona Lisa?",
-    options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"],
-    correctAnswer: 1
-  },
-  {
-    question: "What is the tallest mountain in the world?",
-    options: ["Mount Kilimanjaro", "Mount Everest", "Mount McKinley", "Mount Fuji"],
-    correctAnswer: 1
-  },
-  {
-    question: "What is the capital of Canada?",
-    options: ["Toronto", "Ottawa", "Vancouver", "Montreal"],
-    correctAnswer: 1
-  },
-  {
-    question: "Which gas do plants primarily use for photosynthesis?",
-    options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
-    correctAnswer: 1
-  },
-  {
-    question: "In which year did the Titanic sink?",
-    options: ["1907", "1912", "1921", "1930"],
-    correctAnswer: 1
-  },
-  {
-    question: "Which famous playwright wrote 'Romeo and Juliet'?",
-    options: ["William Shakespeare", "Jane Austen", "Mark Twain", "Charles Dickens"],
+    question: "var a = '5',b = 5  a==b რა იქნება პასუხი ამ გამოსახულებაზე?",
+    options: ["True", "Nan", "Undefined", "false"],
     correctAnswer: 0
   },
   {
-    question: "What is the largest planet in our solar system?",
-    options: ["Earth", "Jupiter", "Mars", "Saturn"],
-    correctAnswer: 1
-  },
-  {
-    question: "Which element is essential for human bone health?",
-    options: ["Iron", "Calcium", "Potassium", "Sodium"],
-    correctAnswer: 1
-  },
-  {
-    question: "Which famous scientist is known for the theory of evolution?",
-    options: ["Isaac Newton", "Albert Einstein", "Charles Darwin", "Nikola Tesla"],
-    correctAnswer: 2
-  },
-  {
-    question: "What is the process by which plants make their own food?",
-    options: ["Photosynthesis", "Respiration", "Fermentation", "Digestion"],
-    correctAnswer: 0
-  },
-  {
-    question: "Which natural disaster is measured using the Richter scale?",
-    options: ["Hurricane", "Tornado", "Earthquake", "Volcanic Eruption"],
-    correctAnswer: 2
-  },
-  {
-    question: "Which artist is famous for painting the 'Starry Night'?",
-    options: ["Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci", "Claude Monet"],
-    correctAnswer: 1
-  },
-  {
-    question: "What is the largest species of shark?",
-    options: ["Tiger Shark", "Great White Shark", "Hammerhead Shark", "Whale Shark"],
+    question: "რას გვაძლევს ფუნქცია Math.Random()?",
+    options: ["შემთხვევით რიცხვს 1000-მდე", "არასწორი ჩანაწერია", "ასეთი მეთოდი არ არსებობს", "შემთხვევით რიცხვს 0-დან 1-მდე ინტერვალში"],
     correctAnswer: 3
   },
   {
-    question: "Which gas is responsible for the Earth's ozone layer?",
-    options: ["Carbon Dioxide", "Oxygen", "Methane", "Ozone"],
-    correctAnswer: 3
-  },
-  {
-    question: "Which famous scientist developed the laws of motion and gravity?",
-    options: ["Galileo Galilei", "Isaac Newton", "Albert Einstein", "Stephen Hawking"],
-    correctAnswer: 1
-  },
-  {
-    question: "In which continent is the Sahara Desert primarily located?",
-    options: ["North America", "South America", "Africa", "Asia"],
+    question: "რას გვაძლევს ფუნქცია Math.ceil()?",
+    options: ["მითითებულ რიცხვს დაამრგვალებს მთელი ნაკლები მნიშვნელობისთვის", "ასეთი მეთოდი არ არსებობს", "მითითებულ რიცხვს დაამრგვალებს მთელი მეტი მნიშვნელობისთვის", 
+    "მოცემულ რიცხვს დაამრგვალებს უახლოესი მთელი მნიშვნელობისთვის"],
     correctAnswer: 2
   },
   {
-    question: "What is the largest land mammal?",
-    options: ["African Elephant", "Grizzly Bear", "Giraffe", "Hippopotamus"],
-    correctAnswer: 0
-  },
+  question: "რას გვაძლევს ფუნქცია Math.floor()?",
+  options: ["მითითებულ რიცხვს დაამრგვალებს მთელი ნაკლები მნიშვნელობისთვის", "ასეთი მეთოდი არ არსებობს", "მითითებულ რიცხვს დაამრგვალებს მთელი მეტი მნიშვნელობისთვის", 
+  "მოცემულ რიცხვს დაამრგვალებს უახლოესი მთელი მნიშვნელობისთვის"],
+  correctAnswer: 0
+},
 ];//Array of Elements
 
 //starting Game Phase
@@ -167,7 +148,7 @@ Answers.forEach(function(answer,index){
       if(Score>highScore){
         highScore = Score;
         localStorage.setItem('highScore',highScore);
-        showHighScore.textContent = `Current High Score:${highScore}`;
+        showHighScore.textContent = `უმაღლესი ქულა:${highScore}`;
       }
       StartOver();
     }
@@ -184,7 +165,7 @@ Answers.forEach(function(answer,index){
     
     }
     else{
-      ScoreBoard.textContent = `You have scored ${Score} points`;
+      ScoreBoard.textContent = `თქვენ აიღეთ ${Score} ქულა`;
     }
    
   })
@@ -226,13 +207,13 @@ function StartOver(){
 
 
 highScore = localStorage.getItem('highScore') || 0;
-showHighScore.textContent = `Current High Score:${highScore}`;
+showHighScore.textContent = `უმაღლესი ქულა:${highScore}`;
 
 
 function resetscore(){
   localStorage.removeItem('highScore');
   highScore = 0;
-  showHighScore.textContent = `Current High Score: ${highScore}`;
+  showHighScore.textContent = `უმაღლესი ქულა: ${highScore}`;
 }
 
 
